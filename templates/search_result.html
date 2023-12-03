@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <title>BrightMate</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ 
+    <!-- Favicon -->
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+
+    <!-- Template Stylesheet -->
+
+</head>
+<div id="mySidebar" class="sidebar">
+    <h2 class="m-0 text" style="color:darkturquoise; font-weight: bold;"><i class="fa fa-book me-3"></i>BrightMate</h2>
+  
+  
+    <img src="https://www.logolynx.com/images/logolynx/s_23/23938578fb8d88c02bc59906d12230f3.png">
+   <a href="/logout/"> <img src="https://th.bing.com/th/id/OIP.Kb13Ps1nwSYI5LrhQwEhAwHaHa?pid=ImgDet&w=500&h=500&rs=1" height="50px" width="50px">LogOut</a>
+    <form action="/search/" class="d-flex mb-3 mb-lg-0" method="get">
+        <div class="input-group flex-nowrap">
+          <input type="text" class="form-control form-control-lg" name="q" placeholder="Search Here" value="{{query}}">
+          <button type="submit" class="input-group-text btn-" id="btt" style="background-color:darkturquoise; color:black;" ><i class="bi bi-search me-2" ></i> Search</button>
+        </div>
+      </form>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="/admin_home/"><i class="fas fa-home"></i>Home</a>
+    <a href="/add_category/"><i class="fa fa-plus"></i> Add Category</a>
+  
+    <div class="dropdown">
+        <a href="#" style="text-align: center;"><i class="fa fa-caret-down"></i>Requested</a>
+        <div class="dropdown-content">
+          <a href="/all_requested_books/">
+            <i class="bi bi-chat-dots"></i>
+  
+  Requested</a>
+          <a href="/returned_books_admin/"><i class="fas fa-book"></i>Return Request</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#"><i class="fa fa-caret-down"></i>Books</a>
+         <div class="dropdown-content">
+           <a href="/add_book/"><i class="fa fa-plus"></i>Add Book</a>
+           <a href="/book_list_all/"><i class="fa fa-book"></i>All Books</a>
+         </div>
+       </div>
+       <a href="/admin_home/"><i class="bi bi-exclamation-diamond"></i>Penalty</a>
+  
+    <a href="#">Contact</a>
+  
+  
+     
+  
+      
+                
+      <a href="/show_members/"><i class="bi bi-people"></i>
+        Members</a>
+  
+    </div>
+  </div>
+  
+  
+  
+  <div id="main">
+    <button class="openbtn" onclick="openNav()" style="background-color:darkturquoise;">&#9776;BrightMate</button>
+  
+  </div>
+
+    <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+          <div style="background-color: white; height: 50px;">
+            {% if query %}
+              <marquee behavior="scroll" direction="left">
+                <span style="font-size: 20px;">Results for "{{ query }}":</span>
+              </marquee>
+            {% else %}
+              <h2 class="text-center mb-4">Books</h2>
+            {% endif %}
+          </div>
+          {% if query %}
+          
+          {% endif %}
+          <div class="col-md-8">
+            {% if not books %}
+              <p class="text-center" style="font-size: 80px; color:white;">No books found.</p>
+            {% endif %}
+            {% for book in books %}
+              <div class="card mb-4">
+                <div class="row no-gutters">
+                  <div class="col-md-4">
+                    <img src="{{ book.image.url }}" class="card-img" alt="{{ book.title }}">
+                    {% if book.available_copies >= 1 %}
+                      <div class="available-tag">Available</div>
+                    {% else %}
+                      <div class="not-available-tag">Not Available</div>
+                    {% endif %}
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h2 class="card-title" style="font-size: 30px;"><strong>Title:{{ book.title|truncatewords:20 }}</strong></h2>
+                      <p class="card-text" style="font-size: 30px;"><strong>Details:{{ book.description }}</strong></p>
+                      <p class="card-text" style="font-size: 30px;"><strong>Year of Publication:</strong> {{ book.year_of_publish }}</p>
+                      {% if book.available_copies >= 1 %}
+                        <p class="card-text" style="font-size: 30px;"><strong>Copies Left: <span style="color: green;">{{ book.available_copies }}</strong></span></p>
+                      {% else %}
+                        <p class="card-text" style="font-size: 30px;"><strong>Copies Left:</strong> <span style="color: red;">No copies left</strong></span></p>
+                      {% endif %}
+                      <p class="card-text" style="font-size: 30px;"><strong>Category: {{ book.category }}</strong></p>
+                      <p class="card-text" style="font-size: 30px;"><strong>Language: {{ book.language }}</strong></p>
+                      <h3 class="card-text" style="font-size: 30px;"><strong>{{ book.price }}₹</strong></h3>
+                      <a href="{% url 'edit_book' book_id=book.id %}" class="btn btn-success mr-2"><i class="fa fa-edit"></i> Edit</a>
+                      <br>
+                      <br>
+                      <a href="#" onclick="confirmDelete('{{ book.id }}')" class="btn btn-danger"><i class="bi bi-trash"></i> Delete</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+            
+      
+
+      <style>
+
+      
+    
+        .available-tag {
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: green;
+          color: white;
+          padding: 5px;
+          font-weight: bold;
+        }
+        
+        .not-available-tag {
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: red;
+          color: white;
+          padding: 5px;
+          font-weight: bold;
+        }
+        
+        body {
+          background-image: url(https://img.freepik.com/free-photo/young-woman-studying-library_1303-19021.jpg?size=626&ext=jpg&ga=GA1.2.1319810605.1677582836&semt=sph);
+          background-attachment: fixed;
+          background-repeat: no-repeat;
+          background-size: 100%;
+         
+        }
+        @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900");
+        @import url("https://cdn.linearicons.com/free/1.0.0/icon-font.min.css");
+        body {
+          font-family: 'Montserrat', sans-serif;
+        }
+        
+        .weather-card {
+          margin-bottom: 20px;
+          height: 700px;
+          width: 350px;
+          background: #fff;
+          box-shadow: 0 1px 38px rgba(0, 0, 0, 0.15), 0 5px 12px rgba(0, 0, 0, 0.25);
+          overflow: hidden;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        .weather-card .top {
+          position: relative;
+          height: 570px;
+          width: 100%;
+          overflow: hidden;
+          background-size: cover;
+          background-position: center center;
+          text-align: center;
+        }
+        .weather-card .top .wrapper {
+          padding: 30px;
+          position: relative;
+          z-index: 1;
+        }
+        .weather-card .top .wrapper .mynav {
+          height: 20px;
+        }
+        .weather-card .top .wrapper .mynav .lnr {
+          color: #fff;
+          font-size: 20px;
+        }
+        .weather-card .top .wrapper .mynav .lnr-chevron-left {
+          display: inline-block;
+          float: left;
+        }
+        .weather-card .top .wrapper .mynav .lnr-cog {
+          display: inline-block;
+          float: right;
+        }
+        .weather-card .top .wrapper .heading {
+          margin-top: 20px;
+          font-size: 35px;
+          font-weight: 400;
+          color: #fff;
+        }
+        .weather-card .top .wrapper .location {
+          margin-top: 20px;
+          font-size: 21px;
+          font-weight: 400;
+          color: #fff;
+        }
+        .weather-card .top .wrapper .temp {
+          margin-top: 20px;
+        }
+        .weather-card .top .wrapper .temp a {
+          text-decoration: none;
+          color: #fff;
+        }
+        .weather-card .top .wrapper .temp a .temp-type {
+          font-size: 85px;
+        }
+        .weather-card .top .wrapper .temp .temp-value {
+          display: inline-block;
+          font-size: 85px;
+          font-weight: 600;
+          color: #fff;
+        }
+        .weather-card .top .wrapper .temp .deg {
+          display: inline-block;
+          font-size: 35px;
+          font-weight: 600;
+          color: #fff;
+          vertical-align: top;
+          margin-top: 10px;
+        }
+        .weather-card .top:after {
+          content: "";
+          height: 100%;
+          width: 100%;
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        .weather-card .bottom {
+          padding: 0 30px;
+          background: #fff;
+        }
+        .weather-card .bottom .wrapper .forecast {
+          overflow: hidden;
+          margin: 0;
+          font-size: 0;
+          padding: 0;
+          padding-top: 20px;
+          max-height: 155px;
+        }
+        .weather-card .bottom .wrapper .forecast a {
+          text-decoration: none;
+          color: #000;
+        }
+        .weather-card .bottom .wrapper .forecast .go-up {
+          text-align: center;
+          display: block;
+          font-size: 25px;
+          margin-bottom: 10px;
+        }
+        .weather-card .bottom .wrapper .forecast li {
+          display: block;
+          font-size: 25px;
+          font-weight: 400;
+          line-height: 1em;
+          margin-bottom: 30px;
+        }
+        .weather-card .bottom .wrapper .forecast li .date {
+          display: inline-block;
+        }
+        .weather-card .bottom .wrapper .forecast li .condition {
+          display: inline-block;
+          vertical-align: middle;
+          float: right;
+          font-size: 25px;
+        }
+        .weather-card .bottom .wrapper .forecast li .condition .temp {
+          display: inline-block;
+          vertical-align: top;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 20px;
+          font-weight: 400;
+          padding-top: 2px;
+        }
+        .weather-card .bottom .wrapper .forecast li .condition .temp .deg {
+          display: inline-block;
+          font-size: 10px;
+          font-weight: 600;
+          margin-left: 3px;
+          vertical-align: top;
+        }
+        .weather-card .bottom .wrapper .forecast li .condition .temp .temp-type {
+          font-size: 20px;
+        }
+        .container {
+            max-width: 1700px;
+            height: auto;
+          }
+
+  
+  .sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #f3f3f3;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .sidebar a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    transition: 0.3s;
+  }
+  
+  .sidebar a:hover {
+    color: teal;
+  }
+  
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #f3f3f3;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+    background-color: #bbb;
+  }
+  
+  #main {
+    transition: margin-left .5s;
+    padding: 20px;
+  }
+  
+  /* The dropdown container */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    z-index: 1;
+    text-align: center; /* add this line to center the items */
+  }
+  
+  .dropdown-content {
+    width: 200px; /* Set a fixed width */
+    background-color: #f6f6f6;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+    /* Styling for the search bar */
+  form {
+    display: inline-block;
+    margin-top: 10px;
+  }
+  
+  input[type="text"] {
+    background-color: #f6f6f6;
+    border: 2px;
+    padding: 10px;
+    font-size: 17px;
+    width: 300px;
+  }
+  
+
+
+
+  
+  
+
+  </style>
+<script>
+    /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+function openNav() {
+document.getElementById("mySidebar").style.width = "250px";
+document.getElementById("main").style.marginLeft = "250px";
+}
+
+/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+function closeNav() {
+document.getElementById("mySidebar").style.width = "0";
+document.getElementById("main").style.marginLeft = "0";
+}
+
+
+
+
+</script>

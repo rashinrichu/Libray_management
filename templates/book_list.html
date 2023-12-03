@@ -1,0 +1,266 @@
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVpHTPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNSf" crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+ <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js" integrity="sha512-FQ2q3zH/a81GJbrNnwbI0/9f/1xJg7kp01BA/BCeNn2qobNlZt+N2DDtIO81ZtXhtZ5xMz5af5pYzy1mW+G+Ew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% load static %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+<!-- Your book listing HTML code goes here -->
+
+{% if messages %}
+  {% for message in messages %}
+     
+    
+    <script>
+      alert('{{ message }}');
+    </script>
+  {% endfor %}
+{% endif %}
+
+
+
+
+<div class="container mt-5 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <img src="{{book.image.url}}" class="img-fluid" alt="{{book.title}}">
+      {% if book.available_copies >= 1 %}
+        <div class="available-tag">Available</div>
+      {% else %}
+        <div class="not-available-tag">Not Available</div>
+      {% endif %}
+    </div>
+    <div class="col-md-8 bg-white rounded p-3">
+      <h2 style="font-size: 30px;"><strong>Title:</strong><strong>{{ book.title|truncatewords:20 }}</strong></h2>
+      <p style="font-size: 30px;"><strong>Details:</strong><strong>{{book.description}}</strong></p>
+      <p style="font-size: 30px;"><strong>Year of Publication:</strong> <strong>{{book.year_of_publish}}</strong></p>
+      {% if book.available_copies >= 1 %}
+        <p style="font-size: 30px;"><strong>Copies Left:</strong> <span style="color: green;"><strong>{{book.available_copies}}</strong></span></p>
+      {% else %}
+        <p style="font-size: 30px;"><strong>Copies Left:</strong> <span style="color: red;">No copies left</span></p>
+      {% endif %}
+      <p style="font-size: 30px;"><strong>Category:</strong> <strong>{{book.category}}</strong></p>
+      <p style="font-size: 30px;"><strong>Language:</strong><strong> {{book.language}}</strong></p>
+      <h3 style="font-size: 30px;"><strong>Price:</strong><strong>{{book.price}}₹</strong></h3>
+      <a href="{% url 'edit_book' book_id=book.id %}">
+        <button type="submit" class="btn btn-success"><i class="fa fa-edit"></i>Edit</button>
+      </a>
+      
+      <a href="#" onclick="confirmDelete('{{ book.id }}')">
+      <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i>Delete</button></a>
+
+    </div>
+    </div>
+  </div>
+</div>
+
+
+<button onclick="history.back()" class="btn btn-info" >Go Back</button>
+<style>
+
+      
+      #bt:hover {
+        background-color:black;
+        color: white;
+      }
+      .available-tag {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: green;
+        color: white;
+        padding: 5px;
+        font-weight: bold;
+      }
+      
+      .not-available-tag {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: red;
+        color: white;
+        padding: 5px;
+        font-weight: bold;
+      }
+      
+      body {
+        background-image: url(https://img.freepik.com/free-photo/young-woman-studying-library_1303-19021.jpg?size=626&ext=jpg&ga=GA1.2.1319810605.1677582836&semt=sph);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: 100%;
+       
+      }
+      @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900");
+      @import url("https://cdn.linearicons.com/free/1.0.0/icon-font.min.css");
+      body {
+        font-family: 'Montserrat', sans-serif;
+      }
+      
+      .weather-card {
+        margin-bottom: 20px;
+        height: 700px;
+        width: 350px;
+        background: #fff;
+        box-shadow: 0 1px 38px rgba(0, 0, 0, 0.15), 0 5px 12px rgba(0, 0, 0, 0.25);
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .weather-card .top {
+        position: relative;
+        height: 570px;
+        width: 100%;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center center;
+        text-align: center;
+      }
+      .weather-card .top .wrapper {
+        padding: 30px;
+        position: relative;
+        z-index: 1;
+      }
+      .weather-card .top .wrapper .mynav {
+        height: 20px;
+      }
+      .weather-card .top .wrapper .mynav .lnr {
+        color: #fff;
+        font-size: 20px;
+      }
+      .weather-card .top .wrapper .mynav .lnr-chevron-left {
+        display: inline-block;
+        float: left;
+      }
+      .weather-card .top .wrapper .mynav .lnr-cog {
+        display: inline-block;
+        float: right;
+      }
+      .weather-card .top .wrapper .heading {
+        margin-top: 20px;
+        font-size: 35px;
+        font-weight: 400;
+        color: #fff;
+      }
+      .weather-card .top .wrapper .location {
+        margin-top: 20px;
+        font-size: 21px;
+        font-weight: 400;
+        color: #fff;
+      }
+      .weather-card .top .wrapper .temp {
+        margin-top: 20px;
+      }
+      .weather-card .top .wrapper .temp a {
+        text-decoration: none;
+        color: #fff;
+      }
+      .weather-card .top .wrapper .temp a .temp-type {
+        font-size: 85px;
+      }
+      .weather-card .top .wrapper .temp .temp-value {
+        display: inline-block;
+        font-size: 85px;
+        font-weight: 600;
+        color: #fff;
+      }
+      .weather-card .top .wrapper .temp .deg {
+        display: inline-block;
+        font-size: 35px;
+        font-weight: 600;
+        color: #fff;
+        vertical-align: top;
+        margin-top: 10px;
+      }
+      .weather-card .top:after {
+        content: "";
+        height: 100%;
+        width: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .weather-card .bottom {
+        padding: 0 30px;
+        background: #fff;
+      }
+      .weather-card .bottom .wrapper .forecast {
+        overflow: hidden;
+        margin: 0;
+        font-size: 0;
+        padding: 0;
+        padding-top: 20px;
+        max-height: 155px;
+      }
+      .weather-card .bottom .wrapper .forecast a {
+        text-decoration: none;
+        color: #000;
+      }
+      .weather-card .bottom .wrapper .forecast .go-up {
+        text-align: center;
+        display: block;
+        font-size: 25px;
+        margin-bottom: 10px;
+      }
+      .weather-card .bottom .wrapper .forecast li {
+        display: block;
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 1em;
+        margin-bottom: 30px;
+      }
+      .weather-card .bottom .wrapper .forecast li .date {
+        display: inline-block;
+      }
+      .weather-card .bottom .wrapper .forecast li .condition {
+        display: inline-block;
+        vertical-align: middle;
+        float: right;
+        font-size: 25px;
+      }
+      .weather-card .bottom .wrapper .forecast li .condition .temp {
+        display: inline-block;
+        vertical-align: top;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        padding-top: 2px;
+      }
+      .weather-card .bottom .wrapper .forecast li .condition .temp .deg {
+        display: inline-block;
+        font-size: 10px;
+        font-weight: 600;
+        margin-left: 3px;
+        vertical-align: top;
+      }
+      .weather-card .bottom .wrapper .forecast li .condition .temp .temp-type {
+        font-size: 20px;
+      }
+    
+</style>
+

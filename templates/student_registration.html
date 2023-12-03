@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <title>BrightMate</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ 
+    <!-- Favicon -->
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.min.js"></script>
+    
+        
+         
+
+            <style>
+      p{
+        font-size: 20px;
+      }
+          label{
+            font-size: 20px;
+          }        
+                  #ah{
+                    color:teal;
+                  }
+                  #s{
+                    color:teal;
+                  }
+           #reg{
+            background-color: teal;
+           }
+                body {
+                  background-image: url('https://img.freepik.com/free-photo/young-woman-studying-library_1303-19021.jpg?size=626&ext=jpg&ga=GA1.2.1319810605.1677582836&semt=sph');
+                    margin: 0;
+                    padding: 0;
+                    background-size: cover;
+                    background-position: center;
+                  }
+                
+                  .loginbox {
+                    height: 1640px;
+                    width:660px;
+                    padding: 20px;
+                    margin: 0 auto;
+                    background-color: white;
+                    margin-bottom: 60px;
+                    
+
+                  }
+                
+                  .avatar {
+                    width: 100px;
+                    height: 100px
+                  }            
+                h1 {
+                    margin: 0;
+                    padding: 0 0 20px;
+                    text-align: center;
+                    font-size: 22px
+                }
+            
+                .loginbox p {
+                    margin: 0;
+                    padding: 0;
+                    font-weight: bold
+                }
+            
+                .loginbox input {
+                    width: 100%;
+                    margin-bottom: 20px
+                }
+            
+                .loginbox input[type="text"],
+                input[type="password"],
+                input[type="email"],
+                input[type="number"] {
+                    border: none;
+                    border-bottom: 1px solid black;
+                    background: transparent;
+                    outline: none;
+                    height: 40px;
+                    color: black;
+                    font-size: 16px
+                }
+            
+                .loginbox input[type="submit"] {
+                    border: none;
+                    outline: none;
+                    height: 40px;
+                    background: #fb2525;
+                    color: #fff;
+                    font-size: 18px;
+                    border-radius: 20px
+                }
+            
+                .loginbox input[type="submit"]:hover {
+                    cursor: pointer;
+                    background: #ffc107;
+                    color: #000
+                }
+            
+                .loginbox a {
+                    text-decoration: none;
+                    font-size: 12px;
+                    line-height: 20px;
+                    color: darkgrey
+                }
+            
+                .loginbox a:hover {
+                    color: #ffc107
+                }
+            
+                @media (max-width: 768px) {
+                    .loginbox {
+                        padding: 40px 20px;
+                        max-height: none;
+                    }
+                    .loginbox input {
+                        height: 30px;
+                    }
+                    .loginbox input[type="submit"] {
+                        height: 30px;
+                    }
+                    .loginbox h1 {
+                        font-size: 20px;
+                    }
+                    .loginbox p {
+                        font-size: 14px;
+                    }
+                }
+            
+                @media (max-width: 480px) {
+                    .loginbox {
+                        padding: 20px;
+                    }
+                    .loginbox input {
+                        height: 25px;
+                        font-size: 14px;
+                    }
+                    .loginbox input[type="submit"] {
+                        height: 25px;
+                        }
+                        
+                        #password-container {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                        }
+                        
+                        .password-input-container input[type="password"] {
+                            width: calc(100% - 40px);
+                          }
+                          
+                          .password-input-container i {
+                            position: relative;
+                            margin-left: -40px;
+                            cursor: pointer;
+                            font-size: 18px;
+                            top: 10px;
+                          }
+                          
+                          
+                        
+                        #password-suggestions {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: center;
+                            align-items: center;
+                            margin-top: 5px;
+                          }
+                          
+                          #password-suggestions div {
+                            display: inline-block;
+                            margin: 5px;
+                            padding: 5px;
+                            border: 1px solid black;
+                            cursor: pointer;
+                          }}
+                          .password-suggestions-container {
+                            border: 1px solid #ccc;
+                            padding: 10px;
+                            border-radius: 5px;
+                            margin: 10px;
+                            max-width: 500px;
+                            color: green;
+                          }
+                          
+                          .password-suggestions-row {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                          }
+                          
+                          .password-suggestion-col {
+                            flex-basis: 30%;
+                            border: 1px solid #ccc;
+                            padding: 10px;
+                            border-radius: 5px;
+                            text-align: center;
+                            margin: 5px;
+                            font-size: 16px;
+                          }
+                           
+                          #togglePassword {
+                            position: absolute;
+                            top: 50%;
+                            right: 0;
+                            transform: translateY(-50%);
+                            cursor: pointer;
+                          }
+                          #btt:hover{
+                            background-color: green;
+                        }
+                        #btt{
+                            color: black;
+                        }
+                        #search{
+                            width: 340px;
+                        }
+                          
+                          input[type="date"] {
+                            padding: 10px;
+                            border-radius: 5px;
+                            border: 1px solid #ccc;
+                            font-size: 16px;
+                            outline: none;
+                            width: 100%;
+                            box-sizing: border-box;
+                          }
+                         /* For mobile devices */
+@media (max-width: 767px) {
+  .navbar-nav {
+    flex-direction: column;
+  }
+  .navbar-nav .nav-item {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+  .navbar-nav .dropdown-menu {
+    position: static;
+    float: none;
+    width: 100%;
+    margin-top: 0;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+  }
+  .navbar-nav .dropdown-menu a {
+    padding: 10px 15px;
+  }
+}
+
+/* For tablets and larger devices */
+@media (min-width: 768px) {
+  .navbar-nav {
+    flex-direction: row;
+  }
+  .navbar-nav .nav-item {
+    margin-right: 10px;
+    margin-bottom: 0;
+  }
+  .navbar-nav .dropdown-menu {
+    position: absolute;
+    float: none;
+    width: 200px;
+    margin-top: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  .navbar-nav .dropdown-menu a {
+    padding: 10px 15px;
+    color: #333;
+  }
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+  /* Add styles here */
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+  /* Add styles here */
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+  /* Add styles here */
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+  /* Add styles here */
+}
+
+                   
+                        </style>
+                        <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+                          <div class="container-fluid">
+                            <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+                              <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>BrightMate</h2>
+                            </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                              <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarCollapse">
+                              <form action="" class="d-flex mb-3 mb-lg-0" method="get">
+                                <div class="input-group flex-nowrap">
+                                  <input type="text" class="form-control form-control-lg" name="query" placeholder="Search Here">
+                                  <button type="submit" class="input-group-text btn-" id="btt"><i class="bi bi-search me-2"></i> Search</button>
+                                </div>
+                              </form>
+                                                            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                                <a href="/" class="nav-item nav-link active"><i class="fas fa-home"></i> Home</a>
+                                <a href="/about/" class="nav-item nav-link"><i class="fa fa-info-circle" aria-hidden="true"></i>About</a>
+                                <a href="/contact/" class="nav-item nav-link"><i class="fa fa-phone" aria-hidden="true"></i>Contact</a>
+                                <a href="/" class="nav-item nav-link"><i class="fas fa-book"></i> Books</a>
+                                <div class="nav-item dropdown">
+                                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fas fa-users"></i> Our team</a>
+                                  <div class="dropdown-menu fade-down m-0">
+                                    <a href="team.html" class="dropdown-item">Our Team</a>
+                                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                                    <a href="404.html" class="dropdown-item">404 Page</a>
+                                  </div>
+                                </div>
+                                <a href="/registration/" class="nav-item nav-link"><i class="fas fa-sign-up"></i> SignUp</a>
+                                <a href="/loginpage" class="nav-item nav-link"><i class="fas fa-sign-in-alt"></i> Login</a>
+                              </div>
+                            </div>
+                          </div>
+                        </nav>
+                           <br>
+                           <br>                                                                   
+                  
+                           
+                          
+                                              <form method="POST" action="/registration/" id="f" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="loginbox was-validated" style="border: 10px solid teal;">
+
+                             
+                              <h1 style="font-size: 50px;" class="m-0 text-primary" id="s"> <i class="fa fa-book me-3"></i>SignUp Here</h1>
+                        
+                              <div class="form-group">
+                                <label for="first-name">First Name</label>
+                                <input type="text" class="form-control" name="first_name" id="first-name" placeholder="Enter First Name" pattern="[A-Z][a-z\s]*" required title="Please enter a valid first name starting with a capital letter.">
+                                <div class="invalid-feedback">Please enter a valid first name starting capital</div>
+                              </div>
+                          
+                              <div class="form-group">
+                                <label for="last-name">Last Name</label>
+                                <input type="text" class="form-control" name="last_name" id="last-name" placeholder="Enter Last Name" pattern="[A-Z][a-z\s]*" required title="Please enter a valid first name starting with a capital letter.">
+                                <div class="invalid-feedback">Please enter a valid last name starting capital</div>
+                              </div>
+                          
+                              <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" name="username" id="username" placeholder="Enter Username" required>
+                                <div class="invalid-feedback">Please enter a username.</div>
+                              </div>
+                          
+                              <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email" required>
+                                <div class="invalid-feedback">Please enter a valid email address.</div>
+                              </div>
+                          
+                              <div class="form-group">
+                                <label for="address">Address</label>
+                                <input type="text" class="form-control" name="address" id="address" placeholder="Enter Address" required>
+                                <div class="invalid-feedback">Please enter an address.</div>
+                              </div>
+                          
+                              <div class="form-group">
+                                <label for="dob">Date of Birth</label>
+                                <input type="date" class="form-control" name="dob" id="dob" placeholder="Enter DOB" required>
+        <div class="form-group">
+                                <label for="phone-number">Phone</label>
+                                <input type="text" class="form-control" name="phone_number" id="phone-number" placeholder="Enter Phone" pattern="[0-9]{10}" required>
+                                <div class="invalid-feedback">Please enter a 10-digit phone number.</div>
+                              </div>
+                          
+                                <label for="image">Image</label>
+                                <input type="file" name="image" id="image" placeholder="Upload Image">
+                                                                     <div class="form-group">
+            
+                                                                      <div class="password-section">
+                                                                        <p>Password</p>
+                                                                        <div class="password-input-container">
+                                                                          <input type="password" name="password" id="password" class="form-control" required minlength="8" onkeyup="suggestPassword()">
+                                                                          <button type="button" id="togglePasswordBtn"><i class="fa fa-eye" style="font-size: small;"></i></button>
+                                                                          <div class="invalid-feedback">Please enter a password at least 8 characters</div>
+                                                                        </div>
+                                                                        <div class="password-suggestions-container">
+                                                                          <p style="color:green">Suggestions:</p>
+                                                                          <div class="password-suggestions-row">
+                                                                            <div class="password-suggestion-col" id="password-suggestion-1"></div>
+                                                                            <div class="password-suggestion-col" id="password-suggestion-2"></div>
+                                                                            <div class="password-suggestion-col" id="password-suggestion-3"></div>
+                                                                          </div>
+                                                                        </div>
+                                                                        <p>Confirm Password</p>
+                                                                        <div id="password-container">
+                                                                          <div class="password-input-container">
+                                                                            <input type="password" name="confirm_password" id="cpassword" class="form-control" required minlength="8" placeholder="Confirm Password">
+                                                                            <div class="invalid-feedback">Please confirm your password.</div>
+                                                                          </div>
+                                                                        </div>
+                                                                        <br>
+                                                                        <input type="submit" name="" value="Register" id="reg">                                                                        <br>
+                                                                        <a href="/login/" style="font-size: 20px;" id="ah">Already have an account? Login</a>
+                                                                      </div>
+                                                                                                      
+                                <script>
+                                    function fillPasswordFields(suggestedPassword) {
+                                        document.getElementById('password').value = suggestedPassword;
+                                        document.getElementById('cpassword').value = suggestedPassword;
+                                    }
+                                
+
+                                    function suggestPassword() {
+                                        var suggestions = [];
+                                        for (var i = 0; i < 3; i++) {
+                                            var randomPassword = Math.random().toString(36).slice(-8);
+                                            suggestions.push(randomPassword);
+                                        }
+                                        var passwordSuggestion1 = document.getElementById('password-suggestion-1');
+                                        var passwordSuggestion2 = document.getElementById('password-suggestion-2');
+                                        var passwordSuggestion3 = document.getElementById('password-suggestion-3');
+                                        passwordSuggestion1.innerHTML = suggestions[0];
+                                        passwordSuggestion2.innerHTML = suggestions[1];
+                                        passwordSuggestion3.innerHTML = suggestions[2];
+                                        passwordSuggestion1.onclick = function() {
+                                            fillPasswordFields(suggestions[0]);
+                                        }
+                                        passwordSuggestion2.onclick = function() {
+                                            fillPasswordFields(suggestions[1]);
+                                        }
+                                        passwordSuggestion3.onclick = function() {
+                                            fillPasswordFields(suggestions[2]);
+                                        }
+                                    }
+                                
+                                    // get password input field and eye button elements
+                                    const passwordInput = document.getElementById("password");
+                                    const togglePasswordBtn = document.getElementById("togglePasswordBtn");
+                                
+                                    // add click event listener to the eye button
+                                    function addEyeButtonListener() {
+                                        const passwordInput = document.getElementById("password");
+                                        const togglePasswordBtn = document.getElementById("togglePasswordBtn");
+                                
+                                        togglePasswordBtn.addEventListener("click", function() {
+                                            if (passwordInput.type === "password") {
+                                                passwordInput.type = "text";
+                                                togglePasswordBtn.innerHTML = "<i class='fa fa-eye-slash'></i>";
+                                            } else {
+                                                passwordInput.type = "password";
+                                                togglePasswordBtn.innerHTML = "<i class='fa fa-eye'></i>";
+                                            }
+                                        });
+                                    }
+                                
+                                    addEyeButtonListener();
+
+                                    const toggleCPasswordBtn = document.getElementById("toggleCPasswordBtn");
+const cpasswordInput = document.getElementById("cpassword");
+
+toggleCPasswordBtn.addEventListener("click", function() {
+  if (cpasswordInput.type === "password") {
+    cpasswordInput.type = "text";
+  } else {
+    cpasswordInput.type = "password";
+  }
+});
+                                </script>

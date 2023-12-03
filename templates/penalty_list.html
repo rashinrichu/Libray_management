@@ -1,0 +1,14 @@
+<form method="POST">
+    {% csrf_token %}
+    <label for="penalty_reason">Penalty reason:</label>
+    <select name="penalty_reason" id="penalty_reason">
+        {% for choice in penalty_reason_choices %}
+            <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <label for="fine_amount">Fine amount:</label>
+    <input type="number" name="fine_amount" id="fine_amount" value="{{ fine_amount }}">
+    <br>
+    <button type="submit">Save penalty</button>
+</form>
